@@ -1,2 +1,4 @@
-# notification-spa
-An Angular 5 single-page application implementing Notification Module
+#Notification Pop-up
+
+An Angular 5 single-page-application implementing Notification Popup Module
+
