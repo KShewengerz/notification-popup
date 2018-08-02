@@ -1,0 +1,35 @@
+/* Imports */
+@import 'variables';
+@import 'mixin';
+
+
+/* Font */
+$font-types: Light Regular Medium;
+
+@each $type in $font-types {
+  $montserrat: Montserrat;
+  $font: #{$montserrat}-#{$type};
+
+
+  @font-face {
+    font-family: $font;
+    src: url('../fonts/#{$font}.ttf');
+  }
+}
+
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: $color-primary;
+  @include body-font(Montserrat-Light);
+}
+
