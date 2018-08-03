@@ -19,18 +19,22 @@
     <div class="category">
       <p class="mat-subheading-1">Category</p>
 
-      <mat-grid-list cols="3"
-                     rowHeight="2:1"
-                     gutterSize="18">
+      <mat-grid-list [cols]="columnNo"
+                     [rowHeight]="rowHeightRatio"
+                     [gutterSize]="gutterSize"
+                     (window:resize)="onResize()">
         <mat-grid-tile class="info active">
+          <mat-icon class="icon selected">check_circle</mat-icon>
           <mat-icon class="icon">info</mat-icon> Info
         </mat-grid-tile>
 
         <mat-grid-tile class="warning">
+          <mat-icon class="icon selected">check_circle</mat-icon>
           <mat-icon class="icon active">warning</mat-icon> Warning
         </mat-grid-tile>
 
         <mat-grid-tile class="error">
+          <mat-icon class="icon selected">check_circle</mat-icon>
           <mat-icon class="icon active">cancel</mat-icon> Error
         </mat-grid-tile>
       </mat-grid-list>

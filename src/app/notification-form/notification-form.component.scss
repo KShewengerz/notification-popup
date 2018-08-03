@@ -24,6 +24,7 @@
   }
 
   @include media-query(402, border-radius, 0);
+  @include media-query(375, height, unset);
 }
 
 .mat-form-field {
@@ -41,7 +42,27 @@
 }
 
 
-/* Category Grid Tile */
+/* Category Mat Grid */
+.mat-grid-list {
+  %text-17 { font-size: 17px; }
+
+  .selected {
+    position: absolute;
+    top: -6px;
+    right: -12px;
+    display: none;
+
+    @extend %text-17;
+  }
+
+  .mat-icon:last-child {
+    position: relative;
+    top: 3px;
+
+    @extend %text-17;
+  }
+}
+
 %transparent-gray-border {
   $transparent-gray: #efeff1;
 
@@ -53,14 +74,12 @@
   cursor: pointer;
   font-size: 13px;
   color: #929292;
+  overflow: unset;
 
-  .mat-icon {
-    font-size: 17px;
-    position: relative;
-    top: 3px;
+  &.active {
+    font-weight: bold;
+    .selected { display: block; }
   }
-
-  &.active { font-weight: bold; }
 
   @extend %transparent-gray-border;
 }
