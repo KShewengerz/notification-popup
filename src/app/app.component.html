@@ -11,13 +11,14 @@
         <mat-icon class="icon">notifications</mat-icon>
       </mat-toolbar-row>
     </mat-toolbar>
-  </div>
+  </div><!-- END fxFlex -->
 
 
   <!-- CONTENT -->
   <div class="container"
        fxFlexAlign="center"
        fxLayoutAlign="start center">
+
     <div>
 
       <!-- HEADER -->
@@ -32,20 +33,12 @@
             [ngStyle.md]="{'font-size.px': 25}"
             [ngStyle.xs]="{'font-size.px': 20}">Setup Notification</h3>
         <p class="mat-subheading-2">Sample Toast Notification Demo using Angular 5 and Material</p>
-      </div>
+      </div><!-- END .header -->
 
       <!-- FORM -->
-      <div class="form">
-        <form>
-          <mat-form-field>
-            <input matInput placeholder="Header">
-          </mat-form-field>
-        </form>
-      </div>
+      <app-notification-form></app-notification-form>
 
     </div>
   </div><!-- .container -->
 
-
-
-</div>
+</div><!-- END fxLayout -->

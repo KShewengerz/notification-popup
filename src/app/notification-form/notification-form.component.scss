@@ -1,0 +1,16 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+
+/* Form */
+.form {
+  background-color: white;
+  height: 400px;
+  max-height: $max;
+  border-radius: 10px;
+  padding: 50px 40px;
+
+  .mat-form-field { width: $max; }
+
+  @include media-query(402, border-radius, 0);
+}

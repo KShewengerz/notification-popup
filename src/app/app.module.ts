@@ -9,11 +9,13 @@ import { AppMaterialModule } from './app-material.module';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 
 import { AppComponent } from './app.component';
+import { NotificationFormComponent } from './notification-form/notification-form.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotificationFormComponent
   ],
   imports: [
     BrowserModule,

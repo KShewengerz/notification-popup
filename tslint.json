@@ -120,13 +120,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "notification",
+      "app",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "notification",
+      "app",
       "kebab-case"
     ],
     "no-output-on-prefix": true,
