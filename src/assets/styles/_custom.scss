@@ -1,0 +1,12 @@
+/* Angular Material Customized Inputs */
+%color-primary { color: $color-primary; }
+
+.mat-stroked-button.mat-primary { @extend %color-primary; }
+
+.mat-input-wrapper { color: $color-darkgray; }
+
+.mat-focused {
+  .mat-form-field-label { color: $color-primary; }
+
+  .mat-form-field-ripple { background-color: $color-primary; }
+}
