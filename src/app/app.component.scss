@@ -1,9 +1,13 @@
+@import '~@angular/material/theming';
 @import '../assets/styles/variables';
-@import '../assets/styles/mixin';
+@import '../assets/styles/placeholder';
 
+$config: mat-typography-config();
 
 * { color: white; }
 
+
+/* Toolbar */
 p { font-size: 14px; }
 
 .mat-toolbar {
@@ -23,7 +27,6 @@ p { font-size: 14px; }
 
     span:first-child {
       font-size: 14px;
-      @include body-font(regular);
     }
   }
 
@@ -32,3 +35,18 @@ p { font-size: 14px; }
 hr { border-color: white; }
 
 .spacer { flex: 1 1 auto; }
+
+
+/* Header */
+.header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @extend %text-center;
+
+  h3 { @extend %clear-margin-bottom; }
+
+}

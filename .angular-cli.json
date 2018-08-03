@@ -20,6 +20,7 @@
       "prefix": "notification",
       "styles": [
         "assets/styles/material-icons.css",
+        "../node_modules/font-awesome/scss/font-awesome.scss",
         "assets/styles/global.scss"
       ],
       "scripts": [],

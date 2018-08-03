@@ -1,6 +1,0 @@
-
-@mixin body-font($ext) {
-  $font: montserrat-#{$ext};
-
-  font-family: '#{$font}', 'sans-serif';
-}
