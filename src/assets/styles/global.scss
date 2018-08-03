@@ -1,24 +1,8 @@
 /* Imports */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~@angular/material/theming';
+@import 'font';
 @import 'variables';
-
-
-/* Font */
-@font-face {
-  font-family: 'montserrat';
-  src: url('../fonts/Montserrat-Regular.ttf');
-}
-
-$custom-typography: mat-typography-config(
-  $font-family: 'montserrat, sans-serif'
-);
-
-@include mat-base-typography($custom-typography);
-@include angular-material-typography($custom-typography);
-@include mat-core($custom-typography);
-
-$config: mat-typography-config();
 
 
 /* Global */
@@ -34,9 +18,9 @@ html, body {
 
 body {
   background-color: $color-primary;
-  font-family: mat-font-family($config);
   display: flex;
   flex-direction: column;
+  font-family: mat-font-family($custom-typography);
 }
 
 .text-center { text-align: center; }

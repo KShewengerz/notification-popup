@@ -1,0 +1,14 @@
+/* Font */
+@font-face {
+  font-family: 'montserrat';
+  src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+$custom-typography: mat-typography-config(
+  $font-family: 'montserrat, sans-serif'
+);
+
+@include mat-base-typography($custom-typography);
+@include angular-material-typography($custom-typography);
+@include mat-core($custom-typography);
+

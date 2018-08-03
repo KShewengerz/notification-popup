@@ -44,7 +44,7 @@
 
 /* Category Mat Grid */
 .mat-grid-list {
-  %text-17 { font-size: 17px; }
+  %text-16 { font-size: 16px; }
 
   .selected {
     position: absolute;
@@ -52,14 +52,14 @@
     right: -12px;
     display: none;
 
-    @extend %text-17;
+    @extend %text-16;
   }
 
   .mat-icon:last-child {
     position: relative;
-    top: 3px;
+    top: 4px;
 
-    @extend %text-17;
+    @extend %text-16;
   }
 }
 
@@ -72,7 +72,7 @@
 
 .mat-grid-tile {
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12px;
   color: #929292;
   overflow: unset;
 
