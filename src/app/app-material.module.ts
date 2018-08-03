@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { MatInputModule, MatToolbarModule, MatIconModule, MatFormFieldModule } from '@angular/material';
+import { MatInputModule, MatToolbarModule, MatIconModule, MatFormFieldModule, MatButtonModule, MatGridListModule } from '@angular/material';
 
 
 @NgModule({
@@ -8,6 +8,8 @@ import { MatInputModule, MatToolbarModule, MatIconModule, MatFormFieldModule } f
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
+    MatButtonModule,
+    MatGridListModule,
     MatIconModule
   ]
 })

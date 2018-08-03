@@ -1,5 +1,8 @@
 @import '../../assets/styles/variables';
+@import '../../assets/styles/placeholders';
 @import '../../assets/styles/mixins';
+
+%margin-bottom-30 { margin-bottom: 30px; }
 
 
 /* Form */
@@ -8,9 +11,82 @@
   height: 400px;
   max-height: $max;
   border-radius: 10px;
-  padding: 50px 40px;
+  padding: 45px 50px;
 
-  .mat-form-field { width: $max; }
+  &-title {
+    color: #606060;
+    @extend %margin-bottom-30;
+
+    .mat-icon {
+      position: relative;
+      top: 4px;
+    }
+  }
 
   @include media-query(402, border-radius, 0);
+}
+
+.mat-form-field {
+  width: $max;
+  @extend %text-14;
+}
+
+
+/* Category */
+.category {
+  margin-top: 22px;
+  @extend %margin-bottom-30;
+
+  p { color: rgba(0,0,0,.54); }
+}
+
+
+/* Category Grid Tile */
+%transparent-gray-border {
+  $transparent-gray: #efeff1;
+
+  border: 2px solid $transparent-gray;
+  background-color: transparentize($transparent-gray, .5);
+}
+
+.mat-grid-tile {
+  cursor: pointer;
+  font-size: 13px;
+  color: #929292;
+
+  .mat-icon {
+    font-size: 17px;
+    position: relative;
+    top: 3px;
+  }
+
+  &.active { font-weight: bold; }
+
+  @extend %transparent-gray-border;
+}
+
+
+/* Category Tile Active Status */
+@mixin activate-tile($color) {
+  color: $color;
+  border-color: $color;
+}
+
+.info.active { @include activate-tile($color-info); }
+
+.warning.active { @include activate-tile($color-warning); }
+
+.error.active { @include activate-tile($color-error); }
+
+
+/* Button */
+button.mat-primary {
+  border-radius: 20px;
+  margin-top: 17px;
+
+  &:hover {
+    color: white;
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
 }

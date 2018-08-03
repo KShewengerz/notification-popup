@@ -1,8 +1,49 @@
 
 <div class="form">
+
+  <!-- TITLE -->
+  <div class="form-title">
+    <mat-icon class="icon">notifications</mat-icon>
+    <span class="mat-title">Notification</span>
+  </div><!-- END .mat-title -->
+
   <form>
+
+    <!-- HEADER -->
     <mat-form-field>
-      <input matInput placeholder="Header">
+      <input placeholder="Header"
+             matInput>
     </mat-form-field>
+
+    <!-- CATEGORY -->
+    <div class="category">
+      <p class="mat-subheading-1">Category</p>
+
+      <mat-grid-list cols="3"
+                     rowHeight="2:1"
+                     gutterSize="18">
+        <mat-grid-tile class="info active">
+          <mat-icon class="icon">info</mat-icon> Info
+        </mat-grid-tile>
+
+        <mat-grid-tile class="warning">
+          <mat-icon class="icon active">warning</mat-icon> Warning
+        </mat-grid-tile>
+
+        <mat-grid-tile class="error">
+          <mat-icon class="icon active">cancel</mat-icon> Error
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div><!-- END .category -->
+
+    <!-- BODY -->
+    <mat-form-field>
+      <textarea placeholder="Body"
+                matInput ></textarea>
+    </mat-form-field>
+
+    <div class="text-center">
+      <button mat-stroked-button color="primary">Submit</button>
+    </div>
   </form>
 </div><!-- END .form -->
