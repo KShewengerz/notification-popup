@@ -1,26 +1,51 @@
 
-<div class="container">
+<div fxLayout="column"
+     fxFlexFill>
 
-  <!-- Toolbar -->
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <span>TOAST NOTIFICATION</span>
-      <span class="spacer"></span>
-      <mat-icon class="icon">notifications</mat-icon>
-    </mat-toolbar-row>
-  </mat-toolbar>
+  <!-- TOOLBAR -->
+  <div fxFlex="10">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span>TOAST NOTIFICATION</span>
+        <span class="spacer"></span>
+        <mat-icon class="icon">notifications</mat-icon>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
 
-  <!-- Headline -->
-  <div class="mat-row header">
-    <div class="content">
-      <p>
-        <fa [name]="'cogs'"
-            [size]="'5'"></fa>
-      </p><br/>
 
-      <h3 class="mat-display-1">Setup Notification</h3>
-      <p class="mat-title">Sample Notification Pop-up Demo using Angular 5 and Bootstrap 4</p>
+  <!-- CONTENT -->
+  <div class="container"
+       fxFlexAlign="center"
+       fxLayoutAlign="start center">
+    <div>
+
+      <!-- HEADER -->
+      <div class="header">
+        <p>
+          <fa [name]="'cogs'"
+              [size]="'5'"></fa>
+        </p><br/>
+
+        <h3 class="mat-headline"
+            [ngStyle.lg]="{'font-size.px': 28}"
+            [ngStyle.md]="{'font-size.px': 25}"
+            [ngStyle.xs]="{'font-size.px': 20}">Setup Notification</h3>
+        <p class="mat-subheading-2">Sample Toast Notification Demo using Angular 5 and Material</p>
+      </div>
+
+      <!-- FORM -->
+      <div class="form">
+        <form>
+          <mat-form-field>
+            <input matInput placeholder="Header">
+          </mat-form-field>
+        </form>
+      </div>
+
     </div>
-  </div><!-- .headline -->
+  </div><!-- .container -->
+
+
 
 </div>

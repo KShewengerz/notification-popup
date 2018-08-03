@@ -35,5 +35,7 @@ html, body {
 body {
   background-color: $color-primary;
   font-family: mat-font-family($config);
+  display: flex;
+  flex-direction: column;
 }
 
