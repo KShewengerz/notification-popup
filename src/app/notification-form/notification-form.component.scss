@@ -14,7 +14,7 @@
   padding: 45px 50px;
 
   &-title {
-    color: #606060;
+    color: $color-dark;
     @extend %margin-bottom-30;
 
     .mat-icon {

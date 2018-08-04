@@ -1,0 +1,51 @@
+@import '../../../../assets/styles/variables';
+
+
+.container {
+  background: white;
+  position: absolute;
+  left: 30px;
+  bottom: 70px;
+  width: 180px;
+  border-radius: 3px;
+  padding: 15px 20px;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+
+  &.active { opacity: 1; }
+}
+
+%inline-block { display: inline-block; }
+
+.content {
+  margin-left: 4px;
+
+  @extend %inline-block;
+}
+
+.mat-icon {
+  font-size: 23px;
+  position: relative;
+  top: 1px;
+
+  @extend %inline-block;
+}
+
+.header {
+  color: $color-dark;
+  font-size: 11px;
+}
+
+.body {
+  color: $color-gray;
+  font-size: 9px;
+}
+
+.info {
+  .mat-icon { color: $color-info; }
+}
+
+
+
+

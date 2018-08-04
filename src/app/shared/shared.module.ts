@@ -6,6 +6,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppMaterialModule } from './app-material.module';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 
+import { ToastNotificationModule } from './toast-notification/toast-notification.module';
+
 
 @NgModule({
   imports: [
@@ -13,14 +15,16 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
     CommonModule,
     FlexLayoutModule,
     AppMaterialModule,
-    Angular2FontawesomeModule
+    Angular2FontawesomeModule,
+    ToastNotificationModule
   ],
   exports: [
     BrowserAnimationsModule,
     CommonModule,
     FlexLayoutModule,
     AppMaterialModule,
-    Angular2FontawesomeModule
+    Angular2FontawesomeModule,
+    ToastNotificationModule
   ],
   declarations: []
 })

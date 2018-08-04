@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
-import { Notification, NotificationCategory } from '../shared/toast-notification/index';
+import { ToastNotification, ToastNotificationCategory, ToastNotificationService } from '../shared/toast-notification/index';
 
 
 @Component({
@@ -14,17 +14,18 @@ export class NotificationFormComponent implements OnInit {
   
   form: FormGroup;
   
-  notificationCategory: typeof NotificationCategory = NotificationCategory;
+  notificationCategory: typeof ToastNotificationCategory = ToastNotificationCategory;
   
   header   = new FormControl('', [ Validators.required ]);
-  category = new FormControl(NotificationCategory.Info, [ Validators.nullValidator ]);
+  category = new FormControl(ToastNotificationCategory.Info, [ Validators.nullValidator ]);
   body     = new FormControl('', [ Validators.required ]);
   
   columnNo: number;
   gutterSize: number;
   rowHeightRatio: string;
   
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private toastNotificationService: ToastNotificationService) { }
 
   ngOnInit() {
     this.buildForm();
@@ -39,8 +40,9 @@ export class NotificationFormComponent implements OnInit {
     });
   }
   
-  onSubmit(body: Notification): void {
-    console.log(body);
+  onSubmit(body: ToastNotification): void {
+    body.id = Math.floor(Math.random() * 100);
+    this.toastNotificationService.show(body);
   }
   
   @HostListener('window:resize', ['$event'])
