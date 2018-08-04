@@ -7,12 +7,14 @@
     <span class="mat-title">Notification</span>
   </div><!-- END .mat-title -->
 
-  <form>
+  <form [formGroup]="form"
+        (submit)="onSubmit(form.value)">
 
     <!-- HEADER -->
     <mat-form-field>
       <input placeholder="Header"
-             matInput>
+             matInput
+             formControlName="header">
     </mat-form-field>
 
     <!-- CATEGORY -->
@@ -21,19 +23,24 @@
 
       <mat-grid-list [cols]="columnNo"
                      [rowHeight]="rowHeightRatio"
-                     [gutterSize]="gutterSize"
-                     (window:resize)="onResize()">
-        <mat-grid-tile class="info active">
+                     [gutterSize]="gutterSize">
+        <mat-grid-tile class="info"
+                       [class.active]="category.value === notificationCategory.Info"
+                       (click)="category.setValue(notificationCategory.Info)">
           <mat-icon class="icon selected">check_circle</mat-icon>
           <mat-icon class="icon">info</mat-icon> Info
         </mat-grid-tile>
 
-        <mat-grid-tile class="warning">
+        <mat-grid-tile class="warning"
+                       [class.active]="category.value === notificationCategory.Warning"
+                       (click)="category.setValue(notificationCategory.Warning)">
           <mat-icon class="icon selected">check_circle</mat-icon>
           <mat-icon class="icon active">warning</mat-icon> Warning
         </mat-grid-tile>
 
-        <mat-grid-tile class="error">
+        <mat-grid-tile class="error"
+                       [class.active]="category.value === notificationCategory.Error"
+                       (click)="category.setValue(notificationCategory.Error)">
           <mat-icon class="icon selected">check_circle</mat-icon>
           <mat-icon class="icon active">cancel</mat-icon> Error
         </mat-grid-tile>
@@ -43,11 +50,16 @@
     <!-- BODY -->
     <mat-form-field>
       <textarea placeholder="Body"
-                matInput ></textarea>
+                matInput
+                formControlName="body"></textarea>
     </mat-form-field>
 
+    <!-- SUBMIT -->
     <div class="text-center">
-      <button mat-stroked-button color="primary">Submit</button>
+      <button type="submit"
+              mat-stroked-button
+              color="primary"
+              [disabled]="!form.valid">Submit</button>
     </div>
   </form>
 </div><!-- END .form -->
