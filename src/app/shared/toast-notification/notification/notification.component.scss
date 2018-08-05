@@ -3,14 +3,19 @@
 
 
 /* Container */
-.container {
+:host {
   position: absolute;
-  top: 25px;
   right: 16px;
-  width: 200px;
+}
+
+.container {
   border-radius: 3px;
   padding: 15px 20px;
   box-shadow: 0 1px 8px 1px #a9a1a1;
+  width: 200px;
+
+  @extend %overflow-hidden;
+  @extend %bg-white;
 
   & > .icon:first-child {
     position: absolute;
@@ -20,9 +25,6 @@
     top: 20px;
     cursor: pointer;
   }
-
-  @extend %overflow-hidden;
-  @extend %bg-white;
 }
 
 

@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 
 
@@ -12,16 +12,19 @@ import { ToastNotification, ToastNotificationCategory, ToastNotificationService 
   styleUrls   : ['notification.component.scss'],
   animations  : [
     trigger('toast', [
-      state('false', style({ 'opacity': 0 })),
+      state('void', style({ 'opacity': 0 })),
       state('true', style({ 'opacity': 1 })),
-      transition('* => *', animate('0.2s ease-in-out'))
+      transition('void <=> *', animate('0.2s ease-in-out'))
     ])
   ]
 })
-export class NotificationComponent implements OnChanges {
+export class NotificationComponent implements OnInit {
   
-  @Input() notification: ToastNotification;
+  @Input() notification: ToastNotification = null;
   @Output() hideNotification: EventEmitter<number> = new EventEmitter<number>(null);
+  
+  @HostBinding('style.top.px')
+  top: number = 0;
   
   state: boolean = false;
   notificationCategory: string;
@@ -30,20 +33,13 @@ export class NotificationComponent implements OnChanges {
   
   constructor(private toastNotificationService: ToastNotificationService) { }
   
-  ngOnChanges(): void {
-    if (this.notification) {
-      this.updateStateValue();
-      this.notificationCategory = this.category[this.notification.category];
-    }
+  ngOnInit(): void {
+    if (this.notification) this.notificationCategory = this.category[this.notification.category];
   }
   
-  closeNotification(id: number): void {
-    this.updateStateValue();
-    this.hideNotification.emit(id);
-  }
-  
-  updateStateValue(): void {
+  closeNotification(id: number): any {
     this.state = !this.state;
+    this.hideNotification.emit(id);
   }
 
 }

@@ -2,10 +2,11 @@
      class="container"
      [@toast]="state">
 
+  <!-- CLOSE ICON -->
   <mat-icon class="icon"
             (click)="closeNotification(notification.id)">close</mat-icon>
 
-  <!-- ICON -->
+  <!-- NOTIFICATION ICON -->
   <mat-icon class="icon"
             [ngClass]="notificationCategory">
     {{ notificationCategory === 'error' ? 'cancel' : notificationCategory }}

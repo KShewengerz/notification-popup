@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewContainerRef } from '@angular/core';
 
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
@@ -16,12 +16,13 @@ export class ToastNotificationService {
   constructor() { }
   
   show(notification: ToastNotification): void {
+    this.notifications.push({...notification});
     this.sendNewNotification.next(notification);
   }
   
-  hide(id: number): void {
+  hide(id: number, container: ViewContainerRef): void {
     const notificationIndex = this.notifications.findIndex(notification => notification.id == id);
-    this.notifications.splice(notificationIndex, 1);
+    container.remove(notificationIndex);
   }
 
 }
