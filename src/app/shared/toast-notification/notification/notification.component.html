@@ -1,11 +1,17 @@
-<div class="container">
-  <mat-icon class="icon info">info</mat-icon>
+<div *ngIf="notification"
+     class="container">
 
+  <mat-icon class="icon">close</mat-icon>
+
+  <!-- ICON -->
+  <mat-icon class="icon"
+            [ngClass]="notificationCategory">
+    {{ notificationCategory === 'error' ? 'cancel' : notificationCategory }}
+  </mat-icon>
+
+  <!-- CONTENT -->
   <div class="content">
-    <p class="header">Info</p>
-    <p class="body">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-      et dolore magna aliqua.
-    </p>
+    <p class="header">{{ notification.header }}</p>
+    <p class="body">{{ notification.body }}</p>
   </div>
 </div>

@@ -24,23 +24,27 @@
       <mat-grid-list [cols]="columnNo"
                      [rowHeight]="rowHeightRatio"
                      [gutterSize]="gutterSize">
+
+        <!-- INFO -->
         <mat-grid-tile class="info"
-                       [class.active]="category.value === notificationCategory.Info"
-                       (click)="category.setValue(notificationCategory.Info)">
+                       [class.active]="category.value === notificationCategory.info"
+                       (click)="category.setValue(notificationCategory.info)">
           <mat-icon class="icon selected">check_circle</mat-icon>
           <mat-icon class="icon">info</mat-icon> Info
         </mat-grid-tile>
 
+        <!-- WARNING -->
         <mat-grid-tile class="warning"
-                       [class.active]="category.value === notificationCategory.Warning"
-                       (click)="category.setValue(notificationCategory.Warning)">
+                       [class.active]="category.value === notificationCategory.warning"
+                       (click)="category.setValue(notificationCategory.warning)">
           <mat-icon class="icon selected">check_circle</mat-icon>
           <mat-icon class="icon active">warning</mat-icon> Warning
         </mat-grid-tile>
 
+        <!-- ERROR -->
         <mat-grid-tile class="error"
-                       [class.active]="category.value === notificationCategory.Error"
-                       (click)="category.setValue(notificationCategory.Error)">
+                       [class.active]="category.value === notificationCategory.error"
+                       (click)="category.setValue(notificationCategory.error)">
           <mat-icon class="icon selected">check_circle</mat-icon>
           <mat-icon class="icon active">cancel</mat-icon> Error
         </mat-grid-tile>
@@ -64,4 +68,5 @@
   </form>
 </div><!-- END .form -->
 
+<!-- TOAST NOTIFICATION -->
 <app-toast-notification></app-toast-notification>

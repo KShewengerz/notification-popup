@@ -5,12 +5,12 @@ import { ToastNotification, ToastNotificationService } from './index';
 
 @Component({
   selector: 'app-toast-notification',
-  template: `<app-notification></app-notification>`,
+  template: `<app-notification [notification]="notification"></app-notification>`,
   styles: [``]
 })
 export class ToastNotificationComponent implements OnInit {
   
-  notifications: ToastNotification[] = [];
+  notification: ToastNotification;
   
   constructor(private toastNotificationService: ToastNotificationService) { }
   
@@ -21,7 +21,7 @@ export class ToastNotificationComponent implements OnInit {
   onNewNotification(): void {
     this.toastNotificationService
     .newNotification
-    .subscribe(notifications => notifications ? this.notifications = notifications : null);
+    .subscribe(notification => notification ? this.notification = notification : null);
   }
 
 }

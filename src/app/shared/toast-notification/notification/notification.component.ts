@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 
-import { ToastNotification, ToastNotificationService } from '../index';
+import { ToastNotification, ToastNotificationCategory, ToastNotificationService } from '../index';
 
 
 @Component({
@@ -9,12 +9,17 @@ import { ToastNotification, ToastNotificationService } from '../index';
   templateUrl : 'notification.component.html',
   styleUrls   : ['notification.component.scss']
 })
-export class NotificationComponent implements OnInit {
-
-  notifications: ToastNotification[] = [];
+export class NotificationComponent implements OnChanges {
+  
+  @Input() notification: ToastNotification;
+  
+  category: typeof ToastNotificationCategory = ToastNotificationCategory;
+  notificationCategory: string;
   
   constructor(private toastNotificationService: ToastNotificationService) { }
-
-  ngOnInit() {}
+  
+  ngOnChanges(): void {
+    if (this.notification) this.notificationCategory = this.category[this.notification.category];
+  }
 
 }

@@ -8,7 +8,7 @@ import { ToastNotification } from '../toast-notification.model';
 @Injectable()
 export class ToastNotificationService {
   
-  private sendNewNotification = new BehaviorSubject<ToastNotification[]>(null);
+  private sendNewNotification = new BehaviorSubject<ToastNotification>(null);
   newNotification             = this.sendNewNotification.asObservable();
   
   notifications: ToastNotification[] = [];
@@ -16,8 +16,7 @@ export class ToastNotificationService {
   constructor() { }
   
   show(notification: ToastNotification): void {
-    this.notifications.push(notification);
-    this.sendNewNotification.next(this.notifications);
+    this.sendNewNotification.next(notification);
   }
   
   hide(id: number): void {

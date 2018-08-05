@@ -16,8 +16,8 @@ export class NotificationFormComponent implements OnInit {
   
   notificationCategory: typeof ToastNotificationCategory = ToastNotificationCategory;
   
-  header   = new FormControl('', [ Validators.required ]);
-  category = new FormControl(ToastNotificationCategory.Info, [ Validators.nullValidator ]);
+  header   = new FormControl('', [ Validators.required, Validators.maxLength(25) ]);
+  category = new FormControl(ToastNotificationCategory.info, [ Validators.nullValidator ]);
   body     = new FormControl('', [ Validators.required ]);
   
   columnNo: number;
