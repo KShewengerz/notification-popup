@@ -9,6 +9,9 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
 import { ToastNotificationModule } from './toast-notification/toast-notification.module';
 
 
+/**
+ * A module that can be utilized with other components.
+ */
 @NgModule({
   imports: [
     CommonModule,

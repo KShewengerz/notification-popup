@@ -9,6 +9,9 @@ import { NotificationComponent } from './notification/notification.component';
 import { ToastNotificationComponent } from './toast-notification.component';
 
 
+/**
+ * A module that supports Toast Notification Feature that can be shared across modules that is used to active toast notification.
+ */
 @NgModule({
   imports: [
     CommonModule,

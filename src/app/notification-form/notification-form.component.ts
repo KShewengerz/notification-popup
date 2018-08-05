@@ -4,6 +4,9 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { ToastNotification, ToastNotificationCategory, ToastNotificationService } from '../shared/toast-notification/index';
 
 
+/**
+ * A component that holds the notification form used to activate the toast notification.
+ */
 @Component({
   moduleId    : module.id,
   selector    : 'app-notification-form',
@@ -26,12 +29,18 @@ export class NotificationFormComponent implements OnInit {
   
   constructor(private fb: FormBuilder,
               private toastNotificationService: ToastNotificationService) { }
-
+  
+  /**
+   * Initializes Form Builder and HostListeners Resize Functionality
+   */
   ngOnInit() {
     this.buildForm();
     this.onResize();
   }
   
+  /**
+   * Reactive Form Builder
+   */
   buildForm(): void {
     this.form = this.fb.group({
       'header'    : this.header,
@@ -40,17 +49,33 @@ export class NotificationFormComponent implements OnInit {
     });
   }
   
+  /**
+   * Triggers when form is valid and submitted.
+   *
+   * @param {ToastNotification} body
+   */
   onSubmit(body: ToastNotification): void {
     body.id = Math.floor(Math.random() * 100);
     this.toastNotificationService.show(body);
   }
   
+  /**
+   * Triggers when Screen is resized, it initializes the Mat Grid variables (columnNo, rowHeightRatio, gutterSize) to make
+   * the category grid list responsive on 375px screen width.
+   */
   @HostListener('window:resize', ['$event'])
   onResize(): void {
     if (window.innerWidth <= 375) this.initializeMatGrid(1, '6:1', 12);
     else this.initializeMatGrid(3, '2:1', 18);
   }
   
+  /**
+   * Initializes MatGrid values used for the responsiveness on Category Grid.
+   *
+   * @param {number} column
+   * @param {string} row
+   * @param {number} gutter
+   */
   initializeMatGrid(column: number, row: string, gutter: number): void {
     this.columnNo       = column;
     this.rowHeightRatio = row;

@@ -6,6 +6,9 @@ import { SharedModule } from '../shared/shared.module';
 import { NotificationFormComponent } from './notification-form.component';
 
 
+/**
+ * A module that holds Notification Form Component used to input fields and trigger toast notification.
+ */
 @NgModule({
   imports: [
     SharedModule,
