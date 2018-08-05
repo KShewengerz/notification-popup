@@ -13,8 +13,6 @@ export class ToastNotificationComponent implements OnInit {
   
   @ViewChild('container', { read: ViewContainerRef}) container: ViewContainerRef;
   
-  top: number = 0;
-  
   constructor(private toastNotificationService: ToastNotificationService,
               private resolver: ComponentFactoryResolver) { }
   
@@ -35,13 +33,9 @@ export class ToastNotificationComponent implements OnInit {
     
     instance.notification = {...notification};
     instance.state        = true;
-    instance.top          = this.incrementTopValue();
     
     instance.hideNotification.subscribe(id => this.toastNotificationService.hide(id, this.container));
   }
   
-  incrementTopValue(): number {
-    this.top += this.top == 0 ? 25 : 70;
-    return this.top;
-  }
+ 
 }

@@ -7,4 +7,6 @@ export interface ToastNotification {
   body     : string;
   
   category : ToastNotificationCategory;
+  
+  top     ?: string;
 }

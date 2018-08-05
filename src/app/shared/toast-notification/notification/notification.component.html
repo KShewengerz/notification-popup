@@ -1,6 +1,7 @@
 <div *ngIf="notification"
      class="container"
-     [@toast]="state">
+     [@toast]="state"
+     [ngStyle]="{top: notification.top}">
 
   <!-- CLOSE ICON -->
   <mat-icon class="icon"

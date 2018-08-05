@@ -23,9 +23,6 @@ export class NotificationComponent implements OnInit {
   @Input() notification: ToastNotification = null;
   @Output() hideNotification: EventEmitter<number> = new EventEmitter<number>(null);
   
-  @HostBinding('style.top.px')
-  top: number = 0;
-  
   state: boolean = false;
   notificationCategory: string;
   
@@ -34,7 +31,21 @@ export class NotificationComponent implements OnInit {
   constructor(private toastNotificationService: ToastNotificationService) { }
   
   ngOnInit(): void {
+    this.onHiddenNotification();
+    
     if (this.notification) this.notificationCategory = this.category[this.notification.category];
+  }
+  
+  onHiddenNotification(): void {
+    this.toastNotificationService
+      .newSiblingsTopValue
+      .subscribe(notifications => {
+        if (notifications) {
+          const notification = notifications.filter(notification => notification.id == this.notification.id)[0];
+          
+          if (notification) this.notification.top = notification.top;
+        }
+      });
   }
   
   closeNotification(id: number): any {

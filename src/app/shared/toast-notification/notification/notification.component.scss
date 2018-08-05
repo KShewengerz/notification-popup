@@ -3,12 +3,9 @@
 
 
 /* Container */
-:host {
+.container {
   position: absolute;
   right: 16px;
-}
-
-.container {
   border-radius: 3px;
   padding: 15px 20px;
   box-shadow: 0 1px 8px 1px #a9a1a1;
