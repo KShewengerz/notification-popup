@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('notification-spa App', () => {
+describe('toast-notification App', () => {
   let page: AppPage;
 
   beforeEach(() => {
