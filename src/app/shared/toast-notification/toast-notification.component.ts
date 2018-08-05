@@ -5,7 +5,8 @@ import { ToastNotification, ToastNotificationService } from './index';
 
 @Component({
   selector: 'app-toast-notification',
-  template: `<app-notification [notification]="notification"></app-notification>`,
+  template: `<app-notification [notification]="notification"
+                               (hideNotification)="onHideNotification($event)"></app-notification>`,
   styles: [``]
 })
 export class ToastNotificationComponent implements OnInit {
@@ -24,4 +25,8 @@ export class ToastNotificationComponent implements OnInit {
     .subscribe(notification => notification ? this.notification = notification : null);
   }
 
+  onHideNotification(id: number): void {
+    console.log('hide', id);
+  }
+  
 }

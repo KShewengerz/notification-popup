@@ -11,7 +11,6 @@ import { ToastNotificationModule } from './toast-notification/toast-notification
 
 @NgModule({
   imports: [
-    BrowserAnimationsModule,
     CommonModule,
     FlexLayoutModule,
     AppMaterialModule,

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 
 import { MatIconModule } from '@angular/material';
@@ -11,6 +12,7 @@ import { ToastNotificationComponent } from './toast-notification.component';
 @NgModule({
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     MatIconModule
   ],
   declarations: [

@@ -1,7 +1,9 @@
 <div *ngIf="notification"
-     class="container">
+     class="container"
+     [@toast]="state">
 
-  <mat-icon class="icon">close</mat-icon>
+  <mat-icon class="icon"
+            (click)="closeNotification(notification.id)">close</mat-icon>
 
   <!-- ICON -->
   <mat-icon class="icon"
