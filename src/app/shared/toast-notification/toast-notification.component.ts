@@ -22,8 +22,8 @@ export class ToastNotificationComponent implements OnInit {
   
   onNewNotification(): void {
     this.toastNotificationService
-    .newNotification
-    .subscribe(notification => notification ? this.createNewNotificationComponent(notification) : null);
+      .newNotification
+      .subscribe(notification => notification ? this.createNewNotificationComponent(notification) : null);
   }
   
   createNewNotificationComponent(notification: ToastNotification): void {
@@ -36,6 +36,5 @@ export class ToastNotificationComponent implements OnInit {
     
     instance.hideNotification.subscribe(id => this.toastNotificationService.hide(id, this.container));
   }
-  
  
 }
