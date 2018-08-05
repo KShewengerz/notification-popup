@@ -1,5 +1,4 @@
 @import '../assets/styles/variables';
-@import '../assets/styles/placeholders';
 @import '../assets/styles/mixins';
 
 
@@ -23,7 +22,7 @@
       margin-top: 5px;
     }
 
-    span:first-child { @extend %text-14; }
+    span:first-child { font-size: 14px; }
   }
 }
 
@@ -41,7 +40,7 @@
   fa { @include media-query(500, font-size, 12px !important); }
 
   p {
-    @extend %text-14;
+    font-size: 14px;
     @extend fa;
   }
 }

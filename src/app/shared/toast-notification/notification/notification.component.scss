@@ -1,44 +1,44 @@
 @import '../../../../assets/styles/variables';
-@import '../../../../assets/styles/placeholders';
+@import '../../../../assets/styles/mixins';
 
 
 /* Container */
+%overflow-hidden { overflow: hidden; }
+
 .container {
-  position: absolute;
-  right: 16px;
   border-radius: 3px;
   padding: 15px 20px;
   box-shadow: 0 1px 8px 1px #a9a1a1;
   width: 200px;
+  background-color: white;
 
   @extend %overflow-hidden;
-  @extend %bg-white;
+  @include set-position(absolute, $right: 16px);
 
   & > .icon:first-child {
-    position: absolute;
-    right: 0;
     font-size: 12px;
     color: $color-darkgray;
-    top: 20px;
     cursor: pointer;
+
+    @include set-position(absolute, $top: 20px, $right: 0);
   }
 }
 
 
 /* Content */
+%inline-block { display: inline-block; }
+
 .content {
   margin-left: 30px;
-
   @extend %inline-block;
 }
 
 .mat-icon {
   font-size: 23px;
-  position: absolute;
-  top: 50%;
   transform: translateY(-50%);
 
   @extend %inline-block;
+  @include set-position(absolute, 50%);
 }
 
 .header {
@@ -58,12 +58,16 @@
 
 
 /* Mat Icons */
+@mixin set-mat-icon-color($color) {
+  color: $color;
+}
+
 .mat-icon {
-  &.info { color: $color-info; }
+  &.info { @include set-mat-icon-color($color-info); }
 
-  &.warning { color: $color-warning; }
+  &.warning { @include set-mat-icon-color($color-warning); }
 
-  &.error { color: $color-error; }
+  &.error { @include set-mat-icon-color($color-error); }
 }
 
 
