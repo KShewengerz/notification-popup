@@ -81,5 +81,21 @@ export class NotificationFormComponent implements OnInit {
     this.rowHeightRatio = row;
     this.gutterSize     = gutter;
   }
+  
+  /**
+   * Returns Error Message to show on form fields based on field errors.
+   *
+   * @param {FormControl} field
+   * @param {string} name
+   * @returns {string}
+   */
+  getErrorMessage(field: FormControl, name: string): string {
+    if (field.hasError('maxlength')) console.log(field.errors.maxlength.requiredLength);
+    
+    const message = (field.hasError('required')) ? `${name} is required` :
+                    (field.hasError('maxlength')) ?
+                    `${name} is limited to ${field.errors.maxlength.requiredLength} characters only` : '';
+    return message;
+  }
 
 }

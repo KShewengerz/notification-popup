@@ -14,6 +14,8 @@
       <input placeholder="Header"
              matInput
              formControlName="header">
+
+      <mat-error *ngIf="header.invalid">{{ getErrorMessage(header, 'Header') }}</mat-error>
     </mat-form-field>
 
     <!-- CATEGORY -->
@@ -55,6 +57,8 @@
       <textarea placeholder="Body"
                 matInput
                 formControlName="body"></textarea>
+
+      <mat-error *ngIf="body.invalid">{{ getErrorMessage(body, 'Body') }}</mat-error>
     </mat-form-field>
 
     <!-- SUBMIT -->
