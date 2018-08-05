@@ -1,7 +1,16 @@
+@import '_variables';
+
 %text-center { text-align: center; }
+
+%inline-block { display: inline-block; }
 
 %text-12 { font-size: 12px; }
 %text-14 { font-size: 14px; }
 
+%bg-white { background-color: white; }
+
 %font-montserrat { font-family: 'montserrat', 'sans-serif'; }
+
+%overflow-hidden { overflow: hidden; }
+
 

@@ -1,33 +1,35 @@
 @import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/placeholders';
 
 
+/* Container */
 .container {
-  background: white;
   position: absolute;
-  left: 30px;
-  bottom: 70px;
-  width: 180px;
+  top: 25px;
+  right: 16px;
+  width: 200px;
   border-radius: 3px;
   padding: 15px 20px;
   transition: opacity 0.2s ease-in-out;
-  opacity: 0;
-  overflow: hidden;
+  box-shadow: 0 1px 8px 1px #a9a1a1;
 
-  &.active { opacity: 1; }
+  @extend %overflow-hidden;
+  @extend %bg-white;
 }
 
-%inline-block { display: inline-block; }
 
+/* Content */
 .content {
-  margin-left: 4px;
+  margin-left: 30px;
 
   @extend %inline-block;
 }
 
 .mat-icon {
   font-size: 23px;
-  position: relative;
-  top: 1px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 
   @extend %inline-block;
 }
@@ -40,11 +42,23 @@
 .body {
   color: $color-gray;
   font-size: 9px;
+  line-height: 1.5em;
+  width: 145px;
+  max-height: 3em;
+
+  @extend %overflow-hidden;
 }
 
-.info {
-  .mat-icon { color: $color-info; }
+
+/* Mat Icons */
+.mat-icon {
+  &.info { color: $color-info; }
+
+  &.warning { color: $color-warning; }
+
+  &.error { color: $color-error; }
 }
+
 
 
 

@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material';
 
 import { ToastNotificationService } from './service/toast-notification.service';
 import { NotificationComponent } from './notification/notification.component';
+import { ToastNotificationComponent } from './toast-notification.component';
 
 
 @NgModule({
@@ -12,9 +13,18 @@ import { NotificationComponent } from './notification/notification.component';
     CommonModule,
     MatIconModule
   ],
-  declarations: [ NotificationComponent ],
+  declarations: [
+    NotificationComponent,
+    ToastNotificationComponent
+  ],
   providers: [ ToastNotificationService ],
-  exports: [ NotificationComponent ],
-  entryComponents: [ NotificationComponent ]
+  exports: [
+    ToastNotificationComponent,
+    NotificationComponent
+  ],
+  entryComponents: [
+    ToastNotificationComponent,
+    NotificationComponent
+  ]
 })
 export class ToastNotificationModule { }

@@ -15,18 +15,6 @@ export class NotificationComponent implements OnInit {
   
   constructor(private toastNotificationService: ToastNotificationService) { }
 
-  ngOnInit() {
-    this.onNewNotification();
-  }
-  
-  onNewNotification(): void {
-    this.toastNotificationService
-      .newNotification
-      .subscribe(notifications => notifications ? this.notifications = notifications : null);
-  }
-  
-  closeNotification(): void {
-  
-  }
+  ngOnInit() {}
 
 }
