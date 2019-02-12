@@ -1,6 +1,8 @@
 # Toast Notification
 
-An Angular 5 single-page-application implementing Toast Notification Module
+> An Angular 5 single-page-application implementing Toast Notification Module
+
+![toast-notification](./src/assets/images/landing-page.png)
 
 #### Main Dev Tools used:
 `Angular 5, Angular CLI, Angular Material, SCSS, Typescript, ES6, Jasmine, Karma`
